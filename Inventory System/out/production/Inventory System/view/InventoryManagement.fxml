@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="1200.0" xmlns="http://javafx.com/javafx/" xmlns:fx="http://javafx.com/fxml/" fx:controller="controller.InventoryManagementController">
+   <children>
+      <Label layoutX="83.0" layoutY="61.0" text="Inventory Management System">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <VBox layoutX="83.0" layoutY="120.0" prefHeight="360.0" prefWidth="480.0" style="-fx-border-radius: 10; -fx-border-color: black; -fx-border-insets: -10;">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="480.0">
+               <children>
+                  <Label alignment="BASELINE_LEFT" text="Parts">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="partsSearch" alignment="CENTER_RIGHT" onAction="#onActionPartSearch" prefHeight="25.0" prefWidth="169.0" promptText="Search by Part ID or Name">
+                     <HBox.margin>
+                        <Insets left="260.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="partsTable" prefHeight="290.0" prefWidth="480.0">
+              <columns>
+                <TableColumn fx:id="partsIDCol" prefWidth="120.0" text="Part ID" />
+                <TableColumn fx:id="partsNameCol" prefWidth="120.0" text="Part Name" />
+                  <TableColumn fx:id="partsInventoryCol" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="partsPriceCol" prefWidth="120.0" text="Price/Cost per Unit" />
+              </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Button fx:id="partsAdd" mnemonicParsing="false" onAction="#onActionAdd" text="Add" />
+                  <Button fx:id="partsModify" mnemonicParsing="false" onAction="#onActionModify" text="Modify" />
+                  <Button fx:id="partsDelete" mnemonicParsing="false" onAction="#onActionDelete" text="Delete" />
+               </children>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="646.0" layoutY="120.0" prefHeight="360.0" prefWidth="480.0" style="-fx-border-radius: 10; -fx-border-color: black; -fx-border-insets: -10;">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="480.0">
+               <children>
+                  <Label alignment="BASELINE_LEFT" prefHeight="20.0" prefWidth="63.0" text="Products">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productsSearch" alignment="CENTER_RIGHT" onAction="#onActionProductsSearch" prefHeight="25.0" prefWidth="178.0" promptText="Search by Product ID or Name">
+                     <HBox.margin>
+                        <Insets left="225.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <TableView fx:id="productsTable" prefHeight="290.0" prefWidth="480.0">
+               <columns>
+                  <TableColumn fx:id="productsID" prefWidth="120.0" text="Product ID" />
+                  <TableColumn fx:id="productsNameCol" prefWidth="120.0" text="Product Name" />
+                  <TableColumn fx:id="productsInventoryCol" prefWidth="120.0" text="Inventory Level" />
+                  <TableColumn fx:id="productsPriceCol" prefWidth="120.0" text="Price/Cost per Unit" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="200.0" spacing="15.0">
+               <children>
+                  <Button fx:id="productsAdd" mnemonicParsing="false" onAction="#onActionProductsAdd" text="Add" />
+                  <Button fx:id="productsModify" mnemonicParsing="false" onAction="#onActionProductsModify" text="Modify" />
+                  <Button fx:id="productsDelete" mnemonicParsing="false" onAction="#onActionProductsDelete" text="Delete" />
+               </children>
+               <padding>
+                  <Insets right="30.0" />
+               </padding>
+            </HBox>
+         </children>
+      </VBox>
+      <Button fx:id="exitButton" layoutX="1041.0" layoutY="519.0" mnemonicParsing="false" onAction="#onActionExit" text="Exit" />
+   </children>
+</AnchorPane>
